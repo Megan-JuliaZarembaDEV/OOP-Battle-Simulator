@@ -9,8 +9,8 @@ class Goblin:
         health: The current health value 
         attack_power: How much health will be drained from opponent if hit
     """
-    def __init__(self, name):
-        self.name = name
+    def __init__(self, smellytoe):
+        self.name = smellytoe
         self.health = 100
         self.attack_power = random.randint(5, 15)
 
@@ -19,6 +19,8 @@ class Goblin:
 
     def take_damage(self, damage):
         self.health -= damage
+        if self.health < 0:
+            self.health = 0
         # TODO We should prevent the goblins health from going into the NEGATIVE
         print(f"{self.name} takes {damage} damage. Health is now {self.health}.")
 

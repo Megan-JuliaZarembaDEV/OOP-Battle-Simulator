@@ -1,3 +1,4 @@
+import random
 class Hero:
     """
     This is our hero blueprint.
@@ -12,17 +13,26 @@ class Hero:
         (Bonus) special_ability: A unique ability the hero can use.
     """
     
-    def __init__(self, name):
+    def __init__(self, Adam):
+         self.name = "Adam"
+         self.health = 400
+         self.attack_power = 80
+
         #TODO Set the hero's name.
         #TODO Set the hero's health. You might give the hero more health than a goblin.
         #TODO Set the hero's attack power. Should it be more consistent than the goblin's?
     
 
     def strike(self):
+           return random.randint(45, self.attack_power)
         # TODO Implement the hero's attack logic. It could be stronger or more consistent than a goblin's.
     
     def receive_damage(self, damage):
-        # TODO Implement take_damage
-        # TODO We should prevent health from going into the NEGATIVE
-    
-    #TODO define is_alive
+        self.health -= damage
+        if self.health < 0:
+            self.health = 0
+        print(f"{self.name} takes {damage} damage. Health is now {self.health}.")
+
+
+def is_alive(self):
+  return self.health > 0
