@@ -1,6 +1,8 @@
 import random
 from goblin import Goblin
 from hero import Hero
+from enemy import Enemy
+from boss import Boweler
 
 def main():
     print("Welcome to the Battle Arena!")

@@ -1,4 +1,5 @@
 from enemy import Enemy
+import random
 
 class Bowler(Enemy):
     

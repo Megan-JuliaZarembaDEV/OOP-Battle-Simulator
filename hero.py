@@ -38,7 +38,7 @@ class Hero:
         return self.health > 0
     
     def heal_hero(self):
-         self.health = self.health
-         return random.randint(1,10)
-    if random.randint == 8:
-        self.health = 400
+         if self.health >= 100:
+            return random.randint(1,10)
+         if random.randint == 8:
+            self.health = 400
