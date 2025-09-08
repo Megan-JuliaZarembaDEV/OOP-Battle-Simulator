@@ -2,7 +2,7 @@ import random
 from goblin import Goblin
 from hero import Hero
 from enemy import Enemy
-from boss import Boweler
+from boss import Bowler
 
 def main():
     print("Welcome to the Battle Arena!")
@@ -14,6 +14,8 @@ def main():
 
     # Create goblins ༼ ºل͟º ༽ ༼ ºل͟º ༽ ༼ ºل͟º ༽
     goblins = [Goblin(f"Goblin {i+1}", "purple") for i in range(8)]
+
+
 
     # Keep track of how many goblins were defeated
     defeated_goblins = 0
@@ -54,11 +56,35 @@ def main():
     else:
         print(f"\nThe hero has been defeated. Game Over. (｡•́︿•̀｡)")
 
-    # Final tally of goblins defeated
+    print("Bowling.....hee--heeehoo!")
+    bowler = Bowler("bowler", color="purple")
+    while hero.is_alive() and bowler.is_alive():
+        damage = hero.strike()
+        bowler.take_damage(damage)
+        damage = bowler.attack()
+        hero.receive_damage(damage)
+
+    if hero.is_alive:
+        
+        print(" BOWLER DEFEATED ")
+    else:
+        print("adam has died")
+
+
+
+
+
+
+    # Final tally of goblins defeated and if the boss is defeated
+
     print("Total Summary")
     print(f"\nTotal goblins defeated: {defeated_goblins} / {len(goblins)}")
     print("Total Damage " + str( total) )
     print("Rounds Cleared:" + str(round))
+    if hero.is_alive:
+        print("Bowler Defeated! ლ(´ڡ`ლ)")
+    else:
+        print("Adam is defeated.. (；´Д｀)")
     
 
 if __name__ == "__main__":

@@ -8,7 +8,7 @@ class Bowler(Enemy):
        super().__init__(name)
        self.health = 200
        self.color = color
-       self.attack_power = 20
+       self.attack_power = 30
 
      def attack(self):
         return random.randint(1, self.attack_power)
