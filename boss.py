@@ -17,4 +17,7 @@ class Bowler(Enemy):
      def take_damage(self, damage):
         print("heee-hee--hoo!")
         print("bowlinggg.....")
+
+
+        print("bowling bowling bowling!")
         return super().take_damage(damage)
